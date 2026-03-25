@@ -1,0 +1,11 @@
+echo "========================="
+echo "Checking your code..."
+echo "To complete the commit, your code must:"
+echo "1) Build."
+echo "2) Lint."
+echo "3) Pass all tests."
+echo "4) Contain properly formatted code."
+echo "In case of emergency, bypass this check by adding the --no-verify flag to your commit."
+echo "(But please don't.  Thanks!)"
+echo "========================="
+pnpm exec lint-staged
