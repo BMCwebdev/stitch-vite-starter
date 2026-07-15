@@ -1,0 +1,24 @@
+#!/bin/bash
+set -e
+
+echo "Checking system dependencies..."
+
+# Node.js
+NODE_VERSION="$(node --version 2>/dev/null || echo "none")"
+if [[ "$NODE_VERSION" == "none" ]]; then
+  echo "Installing Node.js..."
+  brew install node
+  NODE_VERSION="$(node --version)"
+fi
+echo "Node $NODE_VERSION OK"
+
+# pnpm
+PNPM_VERSION="$(pnpm --version 2>/dev/null || echo "none")"
+if [[ "$PNPM_VERSION" == "none" ]]; then
+  echo "Installing pnpm..."
+  npm install -g pnpm
+  PNPM_VERSION="$(pnpm --version)"
+fi
+echo "pnpm $PNPM_VERSION OK"
+
+echo "System dependencies verified."

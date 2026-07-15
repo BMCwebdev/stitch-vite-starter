@@ -21,7 +21,6 @@ export default defineConfig({
       '@bonterratech/stitch-extension > @react-stately/form',
       '@bonterratech/stitch-extension > @react-stately/toast',
       '@bonterratech/stitch-extension > @react-stately/data',
-      '@bonterratech/stitch-extension > @react-types/shared',
       '@bonterratech/stitch-extension > @internationalized/date',
       '@bonterratech/stitch-extension > @internationalized/number',
       '@bonterratech/stitch-extension > @highcharts/react',
