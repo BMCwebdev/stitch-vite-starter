@@ -10,6 +10,7 @@ import {
   Stack,
   TextField,
 } from '@bonterratech/stitch-extension';
+import SeatPicker, { type ZoneId } from './SeatPicker';
 
 const styles = stylex.create({
   page: {
@@ -21,6 +22,7 @@ const styles = stylex.create({
 
 export default function ConcertRsvp() {
   const [bringingGuest, setBringingGuest] = useState('no');
+  const [seatZone, setSeatZone] = useState<ZoneId | null>(null);
 
   return (
     <div {...stylex.props(styles.page)}>
@@ -32,6 +34,12 @@ export default function ConcertRsvp() {
           <SelectItem id="stealth">Stealth - Acoustic Session</SelectItem>
           <SelectItem id="national">The National - Forest Hills</SelectItem>
         </Select>
+
+        <SeatPicker
+          label="Preferred seating zone"
+          value={seatZone}
+          onChange={setSeatZone}
+        />
 
         <RadioGroup
           label="Are you bringing a guest?"
